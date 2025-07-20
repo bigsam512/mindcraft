@@ -1,6 +1,7 @@
 import * as skills from '../library/skills.js';
 import settings from '../settings.js';
 import convoManager from '../conversation.js';
+import { makeCaneMachine } from '../library/cane.js';
 
 
 function runAsAction (actionFn, resume = false, timeout = -1) {
@@ -464,4 +465,11 @@ export const actionsList = [
             await skills.digDown(agent.bot, distance)
         })
     },
+    {
+        name: '!makeCaneMachine',
+        description: 'Build a sugar cane farm.',
+        perform: runAsAction(async (agent) => {
+            await makeCaneMachine(agent.bot);
+        })
+    }
 ];

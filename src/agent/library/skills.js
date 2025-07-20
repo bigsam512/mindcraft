@@ -367,7 +367,7 @@ export async function defendSelf(bot, range=9) {
      * @returns {Promise<boolean>} true if the bot found any enemies and has killed them, false if no entities were found.
      * @example
      * await skills.defendSelf(bot);
-     * **/
+     **/
     bot.modes.pause('self_defense');
     bot.modes.pause('cowardice');
     let attacked = false;
@@ -843,7 +843,7 @@ export async function takeFromChest(bot, itemName, num=-1) {
      * @returns {Promise<boolean>} true if the item was taken from the chest, false otherwise.
      * @example
      * await skills.takeFromChest(bot, "oak_log");
-     * **/
+     **/
     let chest = world.getNearestBlock(bot, 'chest', 32);
     if (!chest) {
         log(bot, `Could not find a chest nearby.`);
@@ -887,7 +887,7 @@ export async function viewChest(bot) {
      * @returns {Promise<boolean>} true if the chest was viewed, false otherwise.
      * @example
      * await skills.viewChest(bot);
-     * **/
+     **/
     let chest = world.getNearestBlock(bot, 'chest', 32);
     if (!chest) {
         log(bot, `Could not find a chest nearby.`);
@@ -1003,7 +1003,7 @@ export async function giveToPlayer(bot, itemType, username, num=1) {
 }
 
 
-export async function goToPosition(bot, x, y, z, min_distance=2) {
+export async function goToPosition(bot, x, y, z, min_distance=1) {
     /**
      * Navigate to the given position.
      * @param {MinecraftBot} bot, reference to the minecraft bot.
@@ -1065,7 +1065,7 @@ export async function goToNearestBlock(bot, blockType,  min_distance=2, range=64
      * @returns {Promise<boolean>} true if the block was reached, false otherwise.
      * @example
      * await skills.goToNearestBlock(bot, "oak_log", 64, 2);
-     * **/
+     **/
     const MAX_RANGE = 512;
     if (range > MAX_RANGE) {
         log(bot, `Maximum search range capped at ${MAX_RANGE}. `);
@@ -1430,7 +1430,7 @@ export async function activateNearestBlock(bot, type) {
      * @returns {Promise<boolean>} true if the block was activated, false otherwise.
      * @example
      * await skills.activateNearestBlock(bot, "lever");
-     * **/
+     **/
     let block = world.getNearestBlock(bot, type, 16);
     if (!block) {
         log(bot, `Could not find any ${type} to activate.`);
