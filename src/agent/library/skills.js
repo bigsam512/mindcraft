@@ -4,9 +4,7 @@ import pf from 'mineflayer-pathfinder';
 import Vec3 from 'vec3';
 
 
-export function log(bot, message) {
-    bot.output += message + '\n';
-}
+export function log(bot, message) {    console.log(message);    bot.output += message + '\n';}
 
 async function autoLight(bot) {
     if (world.shouldPlaceTorch(bot)) {
