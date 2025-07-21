@@ -2,6 +2,7 @@ import * as skills from '../library/skills.js';
 import settings from '../settings.js';
 import convoManager from '../conversation.js';
 import { makeCaneMachine } from '../library/cane.js';
+import { makeRailMachine } from '../library/rail.js';
 
 
 function runAsAction (actionFn, resume = false, timeout = -1) {
@@ -470,6 +471,13 @@ export const actionsList = [
         description: 'Build a sugar cane farm.',
         perform: runAsAction(async (agent) => {
             await makeCaneMachine(agent.bot);
+        })
+    },
+    {
+        name: '!makeRailMachine',
+        description: 'Build a rail duplicater machine.',
+        perform: runAsAction(async (agent) => {
+            await makeRailMachine(agent.bot);
         })
     }
 ];
