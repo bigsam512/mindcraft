@@ -357,6 +357,7 @@ export async function makeRailMachine(bot) {
     await placeOnBlock(bot, "hopper_minecart", [-1, 2, 3]);
     await walkTo(bot, 0, 0, 0);
     await toggleBlock(bot, "lever", 1, 0, 2);
+    await walkTo(bot, 0, 0, 6);
     return
 
 //    bot.setControlState('sneak', true);
