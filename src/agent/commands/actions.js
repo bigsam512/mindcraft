@@ -3,6 +3,7 @@ import settings from '../settings.js';
 import convoManager from '../conversation.js';
 import { makeCaneMachine } from '../library/cane.js';
 import { makeRailMachine } from '../library/rail.js';
+import { makeLogMachine } from '../library/log.js';
 
 
 function runAsAction (actionFn, resume = false, timeout = -1) {
@@ -478,6 +479,13 @@ export const actionsList = [
         description: 'Build a rail duplicater machine.',
         perform: runAsAction(async (agent) => {
             await makeRailMachine(agent.bot);
+        })
+    },
+    {
+        name: '!makeLogMachine',
+        description: 'Build a log machine.',
+        perform: runAsAction(async (agent) => {
+            await makeLogMachine(agent.bot);
         })
     }
 ];
